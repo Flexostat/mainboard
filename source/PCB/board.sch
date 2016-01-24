@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.0.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -401,6 +401,13 @@
 <text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="+12V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
+<symbol name="V+">
+<wire x1="0.889" y1="-1.27" x2="0" y2="0.127" width="0.254" layer="94"/>
+<wire x1="0" y1="0.127" x2="-0.889" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-0.889" y1="-1.27" x2="0.889" y2="-1.27" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="V+" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GND" prefix="GND">
@@ -433,6 +440,19 @@
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="+12V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="V+" prefix="P+">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="V+" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -16302,21 +16322,13 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="PWR" library="con-thomas-betts" deviceset="9090-4" device="R"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="P+7" library="supply1" deviceset="+5V" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="P+10" library="supply1" deviceset="+5V" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
-<part name="P+12" library="supply1" deviceset="+5V" device=""/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
-<part name="P+13" library="supply1" deviceset="+5V" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="IC9" library="74xx-us" deviceset="74*151" device="D" technology="LS"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
@@ -16376,6 +16388,18 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="JP2" library="SparkFun-Connectors" deviceset="M16" device="LOCK"/>
 <part name="P+22" library="supply1" deviceset="+12V" device=""/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
+<part name="P+30" library="supply1" deviceset="+12V" device=""/>
+<part name="VMOT" library="supply1" deviceset="V+" device=""/>
+<part name="P+25" library="supply1" deviceset="+5V" device=""/>
+<part name="VM" library="pinhead" deviceset="PINHD-1X3" device=""/>
+<part name="VMOT1" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT2" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT3" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT4" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT5" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT6" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT7" library="supply1" deviceset="V+" device=""/>
+<part name="VMOT8" library="supply1" deviceset="V+" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16394,21 +16418,13 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <instance part="PWR" gate="G$1" x="48.26" y="200.66" rot="R180"/>
 <instance part="P+5" gate="1" x="68.58" y="203.2"/>
 <instance part="GND5" gate="1" x="58.42" y="198.12"/>
-<instance part="P+6" gate="1" x="342.9" y="210.82"/>
 <instance part="GND12" gate="1" x="365.76" y="193.04"/>
-<instance part="P+7" gate="1" x="342.9" y="170.18"/>
 <instance part="GND13" gate="1" x="365.76" y="152.4"/>
-<instance part="P+8" gate="1" x="342.9" y="129.54"/>
 <instance part="GND14" gate="1" x="365.76" y="111.76"/>
-<instance part="P+9" gate="1" x="411.48" y="215.9"/>
 <instance part="GND15" gate="1" x="434.34" y="198.12"/>
-<instance part="P+10" gate="1" x="342.9" y="88.9"/>
 <instance part="GND16" gate="1" x="365.76" y="71.12"/>
-<instance part="P+11" gate="1" x="411.48" y="165.1"/>
 <instance part="GND17" gate="1" x="434.34" y="154.94"/>
-<instance part="P+12" gate="1" x="411.48" y="132.08"/>
 <instance part="GND18" gate="1" x="434.34" y="114.3"/>
-<instance part="P+13" gate="1" x="411.48" y="91.44"/>
 <instance part="GND19" gate="1" x="434.34" y="73.66"/>
 <instance part="IC9" gate="A" x="500.38" y="101.6"/>
 <instance part="IC9" gate="P" x="114.3" y="213.36"/>
@@ -16483,6 +16499,18 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <instance part="JP2" gate="G$1" x="307.34" y="116.84" rot="R180"/>
 <instance part="P+22" gate="1" x="294.64" y="149.86"/>
 <instance part="JP3" gate="G$1" x="304.8" y="91.44" rot="R180"/>
+<instance part="P+30" gate="1" x="347.98" y="251.46"/>
+<instance part="VMOT" gate="1" x="337.82" y="251.46"/>
+<instance part="P+25" gate="1" x="327.66" y="251.46"/>
+<instance part="VM" gate="A" x="312.42" y="238.76" rot="R180"/>
+<instance part="VMOT1" gate="1" x="342.9" y="210.82"/>
+<instance part="VMOT2" gate="1" x="411.48" y="215.9"/>
+<instance part="VMOT3" gate="1" x="342.9" y="170.18"/>
+<instance part="VMOT4" gate="1" x="411.48" y="165.1"/>
+<instance part="VMOT5" gate="1" x="342.9" y="129.54"/>
+<instance part="VMOT6" gate="1" x="411.48" y="132.08"/>
+<instance part="VMOT7" gate="1" x="411.48" y="91.44"/>
+<instance part="VMOT8" gate="1" x="342.9" y="88.9"/>
 </instances>
 <busses>
 <bus name="PORTA[0..7]">
@@ -16739,54 +16767,6 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="P+5" gate="1" pin="+5V"/>
 </segment>
 <segment>
-<wire x1="335.28" y1="198.12" x2="342.9" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="198.12" x2="342.9" y2="208.28" width="0.1524" layer="91"/>
-<pinref part="P+6" gate="1" pin="+5V"/>
-<pinref part="X1" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="335.28" y1="157.48" x2="342.9" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="157.48" x2="342.9" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="P+7" gate="1" pin="+5V"/>
-<pinref part="X2" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="335.28" y1="116.84" x2="342.9" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="116.84" x2="342.9" y2="127" width="0.1524" layer="91"/>
-<pinref part="P+8" gate="1" pin="+5V"/>
-<pinref part="X3" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="403.86" y1="203.2" x2="411.48" y2="203.2" width="0.1524" layer="91"/>
-<wire x1="411.48" y1="203.2" x2="411.48" y2="213.36" width="0.1524" layer="91"/>
-<pinref part="P+9" gate="1" pin="+5V"/>
-<pinref part="X5" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="335.28" y1="76.2" x2="342.9" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="76.2" x2="342.9" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="P+10" gate="1" pin="+5V"/>
-<pinref part="X4" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="403.86" y1="160.02" x2="411.48" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="411.48" y1="160.02" x2="411.48" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="P+11" gate="1" pin="+5V"/>
-<pinref part="X6" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="403.86" y1="119.38" x2="411.48" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="411.48" y1="119.38" x2="411.48" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="P+12" gate="1" pin="+5V"/>
-<pinref part="X7" gate="G$1" pin="8"/>
-</segment>
-<segment>
-<wire x1="403.86" y1="78.74" x2="411.48" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="411.48" y1="78.74" x2="411.48" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="P+13" gate="1" pin="+5V"/>
-<pinref part="X8" gate="G$1" pin="8"/>
-</segment>
-<segment>
 <wire x1="43.18" y1="114.3" x2="43.18" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="111.76" x2="43.18" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="109.22" x2="43.18" y2="106.68" width="0.1524" layer="91"/>
@@ -16910,6 +16890,12 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="EXPANSION" gate="G$1" pin="6"/>
 <wire x1="175.26" y1="175.26" x2="160.02" y2="175.26" width="0.1524" layer="91"/>
 <label x="165.1" y="175.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="VM" gate="A" pin="3"/>
+<pinref part="P+25" gate="1" pin="+5V"/>
+<wire x1="314.96" y1="241.3" x2="327.66" y2="241.3" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="241.3" x2="327.66" y2="248.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RX1" class="0">
@@ -17147,6 +17133,12 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <wire x1="297.18" y1="99.06" x2="294.64" y2="99.06" width="0.1524" layer="91"/>
 <junction x="294.64" y="99.06"/>
 <junction x="294.64" y="101.6"/>
+</segment>
+<segment>
+<pinref part="VM" gate="A" pin="1"/>
+<pinref part="P+30" gate="1" pin="+12V"/>
+<wire x1="314.96" y1="236.22" x2="347.98" y2="236.22" width="0.1524" layer="91"/>
+<wire x1="347.98" y1="236.22" x2="347.98" y2="248.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LFSELA" class="0">
@@ -17858,6 +17850,62 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="JP1" gate="G$1" pin="6"/>
 <wire x1="281.94" y1="124.46" x2="274.32" y2="124.46" width="0.1524" layer="91"/>
 <label x="276.86" y="124.46" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="V+" class="0">
+<segment>
+<pinref part="VMOT" gate="1" pin="V+"/>
+<wire x1="337.82" y1="248.92" x2="337.82" y2="238.76" width="0.1524" layer="91"/>
+<pinref part="VM" gate="A" pin="2"/>
+<wire x1="337.82" y1="238.76" x2="314.96" y2="238.76" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="335.28" y1="198.12" x2="342.9" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="198.12" x2="342.9" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="X1" gate="G$1" pin="8"/>
+<pinref part="VMOT1" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="403.86" y1="203.2" x2="411.48" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="411.48" y1="203.2" x2="411.48" y2="213.36" width="0.1524" layer="91"/>
+<pinref part="X5" gate="G$1" pin="8"/>
+<pinref part="VMOT2" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="403.86" y1="160.02" x2="411.48" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="411.48" y1="160.02" x2="411.48" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="X6" gate="G$1" pin="8"/>
+<pinref part="VMOT4" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="335.28" y1="157.48" x2="342.9" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="157.48" x2="342.9" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="X2" gate="G$1" pin="8"/>
+<pinref part="VMOT3" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="335.28" y1="116.84" x2="342.9" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="116.84" x2="342.9" y2="127" width="0.1524" layer="91"/>
+<pinref part="X3" gate="G$1" pin="8"/>
+<pinref part="VMOT5" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="403.86" y1="119.38" x2="411.48" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="411.48" y1="119.38" x2="411.48" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="X7" gate="G$1" pin="8"/>
+<pinref part="VMOT6" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="403.86" y1="78.74" x2="411.48" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="411.48" y1="78.74" x2="411.48" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="X8" gate="G$1" pin="8"/>
+<pinref part="VMOT7" gate="1" pin="V+"/>
+</segment>
+<segment>
+<wire x1="335.28" y1="76.2" x2="342.9" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="76.2" x2="342.9" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="X4" gate="G$1" pin="8"/>
+<pinref part="VMOT8" gate="1" pin="V+"/>
 </segment>
 </net>
 </nets>
