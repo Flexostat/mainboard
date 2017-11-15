@@ -303,12 +303,12 @@ void comm_init() {
 	cmdlist[3].args = 1;
 	cmdlist[3].fn = &pump_move_a;
   /////move pump b
-  cmdlist[4].str[0] = 'p';
-  cmdlist[4].str[1] = 'm';
-  cmdlist[4].str[2] = 'b';
-  cmdlist[4].str[3] = 0;
-  cmdlist[4].args = 1;
-  cmdlist[4].fn = &pump_move_b;
+	cmdlist[4].str[0] = 'p';
+	cmdlist[4].str[1] = 'm';
+	cmdlist[4].str[2] = 'b';
+	cmdlist[4].str[3] = 0;
+	cmdlist[4].args = 1;
+	cmdlist[4].fn = &pump_move_b;
   /////pulnmmm; pulse chamber n for mmm time 
   cmdlist[5].str[0] = 'p';
   cmdlist[5].str[1] = 'u';
@@ -346,5 +346,6 @@ void parse_command() {
 			cmdlist[ind].fn(arg);
 		}
 	}
-
+	
+	
 }

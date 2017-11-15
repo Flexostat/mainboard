@@ -14,13 +14,10 @@ volatile uint16_t time;
 void pwm_init() {
 	/*****PWM TIMER0******/
 	DDRB |= 0x18;  //set OC0A and OC0B to outputs
-	DDRD |= 0x80 | 0x40; // set OC2A and OC2B to outputs
 	//clear on compare match, set on BOTTOM, FAST PWM
 	TCCR0A = 1<<COM0A1 | 1<<COM0B1 | 1<<WGM01 | 1<<WGM00;
-	TCCR0B = 0x05; //clock div 1024
-	//clear on compare match, set on BOTTOM, FAST PWM
-	TCCR2A = 1<<COM0A1 | 1<<COM0B1 | 1<<WGM01 | 1<<WGM00;
-	TCCR2B = 0x04 | 0x02 | 0x01; //clock div 1024
+	TCCR0B = 0x05; //clock div 1024 
+
 	//NOTES: Period ~= 16ms instead of 20ms... we'll see how that works
 	//1 "count" in OCR reg is 64uS
 	//10uS = 1degree
@@ -29,8 +26,6 @@ void pwm_init() {
 	//45deg is 16.4, 30.4
 	OCR0A = 23; //center
 	OCR0B = 23; //center
-	OCR2A = 23;
-	OCR2B = 23;
 	
 	
 	/*****PWM TIMER1******/ 
@@ -48,18 +43,13 @@ void pwm_init() {
 	TIMSK1 = 1<<TOV1; //turn on "overflow" interrupt for RTC
 	
 	/*****PWM TIMER2******/
-	DDRD |= 0xC0;  //set OC0A and OC0B to ouputs
+	DDRD |= 0x80 | 0x40; // set OC2A and OC2B to outputs
 	//clear on compare match, set on BOTTOM, FAST PWM
-	TCCR2A = 1<<COM2A1 | 1<<COM2B1 | 1<<WGM21 | 1<<WGM20;
-	TCCR0B = 0x05; //clock div 1024
-	//NOTES: Period ~= 16ms instead of 20ms... we'll see how that works
-	//1 "count" in OCR reg is 64uS = 6.4degrees
-	//10uS = 1degree
-	//so, "center" is 23.4=23 counts
-	//90 deg is 9.4=9 and 37.5=37
-	//45deg is 16.4, 30.4
-	OCR0A = 23; //center
-	OCR0B = 23; //center
+	TCCR2A = 1<<COM2A1 | 1<<COM2B1 | 1<<WGM21 | 1<<WGM20;  //CLEAR TO DISABLE
+	TCCR2B = 0x04 | 0x02 | 0x01; //clock div 1024
+	//NOTES: similar to timer 0
+	OCR2A = 23;
+	OCR2B = 23;
 	
 }
 
